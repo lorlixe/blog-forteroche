@@ -15,20 +15,20 @@ class ArticleController
         $view->render("home", ['articles' => $articles]);
     }
 
-    /**
-     * trier les article.
-     * @return void
-     */
-    public function showByViews(): void
-    {
+    // /**
+    //  * trier les article.
+    //  * @return void
+    //  */
+    // // public function showByViews(): void
+    // // {
 
-        $articleManager = new ArticleManager();
-        $articles = $articleManager->orderByView();
+    // //     $articleManager = new ArticleManager();
+    // //     $articles = $articleManager->orderByView();
 
 
-        $view = new View("showByViews");
-        $view->render("showByViews", ['articles' => $articles]);
-    }
+    // //     $view = new View("showByViews");
+    // //     $view->render("showByViews", ['articles' => $articles]);
+    // // }
 
 
 
@@ -44,14 +44,13 @@ class ArticleController
 
         $articleManager = new ArticleManager();
         $article = $articleManager->getArticleById($id);
-        // var_dump($article);
-        // exit;
+
 
         if (!$article) {
             throw new Exception("L'article demandé n'existe pas.");
         }
+        //incrementer le nombre de vue
         $articleManager->updateViewsInDatabase($article);
-
         $commentManager = new CommentManager();
         $comments = $commentManager->getAllCommentsByArticleId($id);
 

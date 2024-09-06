@@ -32,10 +32,7 @@ try {
             $articleController = new ArticleController();
             $articleController->addArticle();
             break;
-        case 'showByViews':
-            $articleController = new ArticleController();
-            $articleController->showByViews();
-            break;
+
 
         case 'addComment':
             $commentController = new CommentController();
@@ -83,7 +80,10 @@ try {
             $adminController = new AdminController();
             $adminController->monitoring();
             break;
-
+            // case 'showByViews':
+            //     $articleController = new ArticleController();
+            //     $articleController->showByViews();
+            //     break;
         case 'deleteComment':
             $adminController = new AdminController();
             $adminController->deleteSingleComment();

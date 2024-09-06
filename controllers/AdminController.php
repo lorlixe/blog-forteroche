@@ -76,8 +76,7 @@ class AdminController
                 return  strcmp($articleB->getTitle(), $articleA->getTitle());
             });
         }
-        // exit;
-        // On affiche la page d'administration.
+        // On affiche la page de monitoring.
         $view = new View("Monitoring");
         $view->render("monitoring", [
             'articles' => $articles

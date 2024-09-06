@@ -49,19 +49,17 @@ class Article extends AbstractEntity
     {
         return $this->title;
     }
-    /** Getter nb de vues */
+    /** setter nb de vues */
     public function setNbViews(int $nbviews): void
     {
-
         $this->nbviews += $nbviews;
     }
-
+    /** incrementer le nb de vues */
     public function incrementNbViews(): void
     {
-
         $this->nbviews++;
     }
-
+    /** Getter nb de vues */
     public function getNbViews(): int
     {
         return $this->nbviews;
